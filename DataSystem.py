@@ -31,7 +31,6 @@ def log_user_action(user, action):
         con.execute(sql, (time.time(), user, data[0],))
 
 
-# SELECT USAGES.id, time, user, USER_ACTIONS.action_name FROM USAGES INNER JOIN USER_ACTIONS ON USAGES.action = USER_ACTIONS.id;
 class UserLogs:
     def __init__(self):
         self.con = sl.connect('my-test.db')
@@ -57,11 +56,11 @@ class UserLogs:
         with self.con:
             data = self.con.execute("SELECT COUNT(*) FROM USER_ACTIONS WHERE action_name=?", (action))
             if data is None:
-                self.con.execute("INSERT INTO USER_ACTIONS (action_name) values(&)", (action))
+                self.con.execute("INSERT INTO USER_ACTIONS (action_name) values(?)", (action))
                 data = data = self.con.execute("SELECT COUNT(*) FROM USER_ACTIONS WHERE action_name=?", (action))
 
             sql = 'INSERT INTO USAGES (time, user, action) values(?, ?, ?)'
-            self.con.execute(sql, (time.timeUSAGES(), user, data[0][0]))
+            self.con.execute(sql, (time.time(), user, data[0]))
 
 
 UserLogs().activate()

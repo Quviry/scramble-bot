@@ -15,7 +15,7 @@ class Form(StatesGroup):
 
 async def start_handler(event: types.Message):
     
-    with open("../../Downloads/ScrambleBot/static/gifs/testgif.gif", "rb") as gif:
+    with open("static/gifs/testgif.gif", "rb") as gif:
         await event.answer_animation(gif, caption="Welcome to the Srcamble bot")
     await Form.menu.set()
     await menu_handler(event)
