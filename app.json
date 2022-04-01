@@ -1,0 +1,27 @@
+{
+  "name": "Scrambling Telegram bot",
+  "description": "Text me and I`ll send ypu a gif.",
+  "keywords": [
+    "pain",
+    "gif"
+  ],
+  "repository": "https://github.com/Quviry/scramble-bot",
+  "scripts": {
+    "postdeploy": "python3 main.py"
+  },
+  "env": {
+    "tg_bot_key": {
+      "description": "A secret key for verifying the Telegram bot.",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "image": "heroku/python",
+  "environments": {
+  }
+}
