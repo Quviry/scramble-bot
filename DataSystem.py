@@ -3,7 +3,7 @@ import time
 
 
 def log_user_action(user, action):
-    con = sl.connect('../../Downloads/ScrambleBot/my-test.db')
+    con = sl.connect('my-test.db')
     with con:
         con.execute("""
                 CREATE TABLE IF NOT EXISTS USAGES (
@@ -34,7 +34,7 @@ def log_user_action(user, action):
 # SELECT USAGES.id, time, user, USER_ACTIONS.action_name FROM USAGES INNER JOIN USER_ACTIONS ON USAGES.action = USER_ACTIONS.id;
 class UserLogs:
     def __init__(self):
-        self.con = sl.connect('../../Downloads/ScrambleBot/my-test.db')
+        self.con = sl.connect('my-test.db')
 
     def activate(self):
         with self.con:
