@@ -50,6 +50,8 @@ async def get_scrambled(a: str):
     target_path = 'temp/gifs/' + uuid.uuid4().hex + ".gif"
     logger.debug(f"filename: {target_path}")
     durations = [80] * (len(images))
+    logger.debug(target_path)
+    logger.debug(os.path)
     images[0].save(
         target_path,
         format='GIF',
