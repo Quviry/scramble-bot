@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     connector = sqlite3.connect("my-test.db")
-    new_line = '\n'
+    new_line = '<br>>'
     with connector:
         resp = connector.execute("SELECT * FROM USAGES JOIN USER_ACTIONS UA on USAGES.action = UA.id ").fetchall()
     answer = ""
