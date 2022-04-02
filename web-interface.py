@@ -17,6 +17,14 @@ def hello_world():
     return f"<p>Hello, World!</p><div>{answer}</div>"
 
 
+@app.route("/ls")
+def ls():
+    import os
+
+    arr = os.listdir()
+    return " ".join(arr)
+
+
 if __name__ == '__main__':
     # Heroku provides environment variable 'PORT' that should be listened on by Flask
     port = os.environ.get('PORT')
