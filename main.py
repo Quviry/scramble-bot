@@ -1,9 +1,13 @@
 import logging
 import teleinterface
-import settings
-    
+from settings import DEBUG, PROJECT_STRUCTURE
+import promise_structure
+
 if __name__ == "__main__":
-    if settings.DEBUG:
+
+    promise_structure.promise_structure(PROJECT_STRUCTURE)
+
+    if DEBUG:
         logging.basicConfig(level=logging.DEBUG)
         try:
             teleinterface.run()
