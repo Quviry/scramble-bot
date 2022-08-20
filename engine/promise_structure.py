@@ -6,6 +6,9 @@ logger = logging.getLogger(__name__)
 
 
 class BasicOperator:
+
+    entity_path: pathlib.Path
+
     def __init__(self, path):
         if type(path) == str:
             self.entity_path = pathlib.Path.cwd() / path
@@ -40,7 +43,10 @@ class SourceCodeOperator(BasicOperator):
 
 
 class PythonScriptOperator(SourceCodeOperator):
-    err_text = "Python script not exists"
+    err_text = "Python script cant be crated automatically "
+
+    def create_entity(self):
+        raise FileNotFoundError(self.err_text + self.entity_path.__str__())
 
 
 class FolderOperator(BasicOperator):

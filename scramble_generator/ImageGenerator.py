@@ -2,6 +2,7 @@ import logging
 import os
 import random
 import uuid
+from .DataSystem import log_user_action
 
 from PIL import Image, ImageDraw, ImageFont
 

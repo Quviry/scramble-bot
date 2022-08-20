@@ -4,9 +4,7 @@
   "static/gifs": "folder",
   "temp/gifs": "folder",
   "temp/imgs": "folder",
-  "DataSystem.py": "python script",
-  "ImageGenerator.py": "python script",
   "main.py": "python script",
   "requirements.txt": "requirements",
-  "teleinterface.py": "python script"
+  "controls/teleinterface.py": "python script"
 }
